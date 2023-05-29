@@ -18,6 +18,7 @@ jobs:
             docker-compose up -d
             docker-compose run dockerapp python test.py
       - deploy:
+          replicas: 5
           name: Push application Docker image
           hub:
           branch: [circle_ci_publish, master] 
